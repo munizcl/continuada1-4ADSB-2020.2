@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcule a Queda!"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/tv_topo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VAMOS CALCULAR A QUEDA: selecione abaixo qual
+valor que quer descobrir. Lembrando que  estamos utilizando m/s (metros
+por segundo) para a velocidade, s (segundos) para tempo e m/s² (metros
+por segundo ao quadrado) para a gravidade"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_topo"
+        android:id="@+id/contexto"/>
+
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Velocidade"
+    android:textSize="10sp"
+    android:id="@+id/bt_v"
+    app:layout_constraintTop_toBottomOf="@id/contexto"
+    android:onClick="xVelocidade"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tempo"
+        android:textSize="10sp"
+        android:id="@+id/bt_t"
+        app:layout_constraintLeft_toRightOf="@id/bt_v"
+        app:layout_constraintTop_toBottomOf="@id/contexto"
+        android:onClick="xTempo"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gravidade"
+        android:textSize="10sp"
+        android:id="@+id/bt_g"
+        app:layout_constraintLeft_toRightOf="@id/bt_t"
+        app:layout_constraintTop_toBottomOf="@id/contexto"
+        android:onClick="xGravidade"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="'v' = velocidade em m/s"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/bt_v"
+        android:inputType="number"
+        android:visibility="gone"
+        android:id="@+id/et_v"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="'t' = tempo em s"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/et_v"
+        android:inputType="number"
+        android:visibility="gone"
+        android:id="@+id/et_t"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="'g' = gravidade em m/s²"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/et_t"
+        android:inputType="number"
+        android:visibility="gone"
+        android:id="@+id/et_g"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:textSize="25sp"
+        android:id="@+id/bt_c"
+        app:layout_constraintTop_toBottomOf="@id/et_g"
+        android:visibility="gone"
+        android:onClick="calcular"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/bt_c"
+        android:id="@+id/tv_resultado"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
