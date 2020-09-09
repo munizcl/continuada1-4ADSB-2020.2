@@ -45,6 +45,16 @@ class MainActivity : AppCompatActivity() {
 
         if(x == "g"){
             tv_resultado.text = "g = v/t, ou seja, g = $velReal/$temReal. Portanto, g = ${velReal/temReal}"
+            val gFrase = when(velReal/temReal){
+                in Double.MIN_VALUE.. 0.0 -> "Cadê aa gravidade?"
+                in 0.1..2.9 -> "Até parece que esá na Lua"
+                in 3.0..5.0 -> "Essa queda poderia ter sido em Marte"
+                in 5.1..8.5 -> "Ihh, ainda não parece estar na Terra"
+                in 8.6..10.9 -> "Essa queda provavelmente aconteceu em nosso planeta"
+                in 11.0..Double.MAX_VALUE -> "A gravidade tava bem forte ai, hein!"
+                else -> "Caiu no Horizonte de Eventos !"
+            }
+
         }
         if(x == "v"){
             tv_resultado.text = "v = v*t, ou seja, v = $graReal/$temReal. Portanto, v = ${graReal/temReal}"
